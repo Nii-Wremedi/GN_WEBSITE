@@ -1,43 +1,67 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <div class="flex flex-row gap-x-[400px] justify-center m-[20px]">
-        <div class="flex flex-row">
-            <img src="./GN logo.jpg" alt="logo of the company" class="w-[100px]">
-            <h1 class="mt-[10px]">GN Group</h1>
-        </div>
-        <div>
-            <p class="mt-[10px] border border-[2px] border-[#233C8C;] bg-transparent w-[150px] pl-[35px] py-[5px] rounded-[30px] hover:bg-[#233C8C;] hover:text-white cursor-pointer">
-                Contact us
-            </p>
-        </div>
+<body class="font-sans">
+
+  <!-- Navbar -->
+  <header class="flex justify-between items-center px-6 py-4 shadow-md sticky top-0 bg-white z-50">
+    <div class="flex items-center gap-3">
+      <img src="./GN logo.jpg" alt="GN Group Logo" class="w-16">
+      <h1 class="text-xl font-bold text-[#233C8C]">GN Group</h1>
     </div>
-    <div class="w-[100%] h-[600px]">
-        <img src="./StockCake-Construction Work Sunset_1719763984.jpg" class="w-full h-[600px] object-cover absolute ">
-        <div class="relative pt-[150px] pl-[300px]">
-            <h1 class="text-white text-[50px] font-bold tracking-wide">
-                Welcome to <span class="text-blue-200">GN Group</span>
-            </h1>
-            <p class="text-white text-[30px] font-bold ">
-                Driving Excellence in Transport, Construction, and Beyond
-            </p>
-            <p class="text-white text-[15px] pt-[10px]">
-                Discover Our Commitment to Safety, Innovation, and Sustainable Growth
-            </p>
-            <div class="flex flex-row pt-[150px]">
-                <p class="border border-[2px] border-[#233C8C;] w-[200px] rounded-[30px] text-white pl-[30px] mr-[50px] py-[20px] bg-[#233C8C;] hover:bg-transparent cursor-pointer">
-                    GN INCORPORATED
-                </p>
-                <p class="border border-[2px] border-[#233C8C;] w-[200px] rounded-[30px] text-white pl-[30px] py-[20px] bg-[#233C8C;] hover:bg-transparent cursor-pointer">
-                    GN VENTURES Inc
-                </p>
-            </div>
-        </div>
+    <a href="#contact" 
+       class="border-2 border-[#233C8C] px-6 py-2 rounded-full text-[#233C8C] hover:bg-[#233C8C] hover:text-white transition">
+       Contact Us
+    </a>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative w-full h-[600px] flex items-center justify-center">
+    <img src="./StockCake-Construction Work Sunset_1719763984.jpg" 
+         class="absolute w-full h-full object-cover">
+    <div class="absolute inset-0 bg-black/40"></div> <!-- Overlay -->
+
+    <div class="relative text-center text-white px-4">
+      <h1 class="text-4xl md:text-6xl font-bold">
+        Welcome to <span class="text-blue-200">GN Group</span>
+      </h1>
+      <p class="text-lg md:text-2xl font-medium mt-4">
+        Driving Excellence in Transport, Construction, and Beyond
+      </p>
+      <p class="mt-2 text-sm md:text-base">
+        Discover Our Commitment to Safety, Innovation, and Sustainable Growth
+      </p>
+
+      <div class="flex flex-col md:flex-row gap-6 justify-center mt-12">
+        <a href="./gn-incorporated.html" 
+           class="border-2 border-white bg-[#233C8C] px-8 py-3 rounded-full hover:bg-transparent transition">
+           GN Incorporated
+        </a>
+        <a href="./gn-ventures.html" 
+           class="border-2 border-white bg-[#233C8C] px-8 py-3 rounded-full hover:bg-transparent transition">
+           GN Ventures Inc.
+        </a>
+      </div>
     </div>
+  </section>
+
+  <!-- About GN Group Section -->
+  <section class="px-6 md:px-16 py-16 text-center bg-gray-50">
+    <h2 class="text-3xl font-bold text-[#233C8C] mb-6">About GN Group</h2>
+    <p class="max-w-3xl mx-auto text-gray-600">
+      GN Group brings together decades of expertise in petroleum transport through 
+      <span class="font-semibold">GN Incorporated</span> and a broad range of 
+      construction and business ventures through 
+      <span class="font-semibold">GN Ventures Inc.</span>. 
+      From safe and efficient haulage services to cutting-edge construction projects, 
+      our mission is to deliver excellence, foster trust, and build lasting relationships 
+      across Liberia and West Africa.
+    </p>
+  </section>
+
 </body>
 </html>
