@@ -31,17 +31,33 @@
   }
 </script>
 
-<div id="navbar"></div>
+<div id="nav_bar"></div>
 
 <script>
   fetch("navbar.html")
     .then(res => res.text())
     .then(data => {
-      document.getElementById("navbar").innerHTML = data;
+      document.getElementById("nav_bar").innerHTML = data;
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener("click", () => {
+          const expanded = menuBtn.getAttribute("aria-expanded") === "true";
+
+          // Toggle menu visibility
+          mobileMenu.classList.toggle("hidden");
+          mobileMenu.classList.toggle("flex");
+
+          // Toggle hamburger animation
+          menuBtn.classList.toggle("open");
+
+          // Update ARIA attribute
+          menuBtn.setAttribute("aria-expanded", !expanded);
+        });
+      }
     });
 </script>
-
-
   <!-- Hero -->
   <section class="relative text-white py-16 text-center h-[250px]">
     <img src="./StockCake-Construction Work Sunset_1719763984.jpg" class="w-full h-full object-cover absolute inset-0">

@@ -3,72 +3,89 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GN Group</title>
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
 
-<!-- Tailwind -->
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          brand: {
-            blue: "#233C8C",
-            blueLight: "#3A5DCC",
-            gray: "#F5F6FA",
-            dark: "#1A1A1A"
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              blue: "#233C8C",
+              blueLight: "#3A5DCC",
+              gray: "#F5F6FA",
+              dark: "#1A1A1A"
+            }
+          },
+          fontFamily: {
+            heading: ["Poppins", "sans-serif"],
+            body: ["Roboto", "sans-serif"]
           }
-        },
-        fontFamily: {
-          heading: ["Poppins", "sans-serif"],
-          body: ["Roboto", "sans-serif"]
         }
       }
     }
-  }
-</script>
+  </script>
+
+  <!-- Custom Styles -->
+  <style>
+    .menu-transition {
+      transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+      overflow: hidden;
+    }
+    /* Hamburger to X animation */
+    .hamburger span {
+      transition: all 0.3s ease-in-out;
+    }
+    .hamburger.open span:nth-child(1) {
+      transform: rotate(45deg) translateY(8px);
+    }
+    .hamburger.open span:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.open span:nth-child(3) {
+      transform: rotate(-45deg) translateY(-8px);
+    }
+  </style>
 </head>
 
-<body id="nav_bar" class="font-body text-brand-dark">
-<!-- Navbar -->
-<nav class="bg-white">
-  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-    <!-- Logo -->
-    <img src="GN logo.jpg" alt="the company logo." class="w-[80px]">
+<body class="font-body text-brand-dark">
+  <!-- Navbar -->
+  <nav class="bg-white shadow-md">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <!-- Logo -->
+      <img src="GN logo.jpg" alt="Company logo" class="w-[80px]">
 
-    <!-- Desktop Menu -->
-    <div class="hidden md:flex gap-6">
-      <a href="index.html" class="text-black px-3 py-2 rounded-md transition duration-200 hover:bg-[#233C8C] hover:text-white">Home</a>
-      <a href="GN_INCORPORATED.html" class="text-black px-3 py-2 rounded-md transition duration-200 hover:bg-[#233C8C] hover:text-white">GN Incorporated</a>
-      <a href="GN_VENTURES.html" class="text-black px-3 py-2 rounded-md transition duration-200 hover:bg-[#233C8C] hover:text-white">GN Ventures Inc.</a>
-      <a href="conctact_us.html" class="text-black px-3 py-2 rounded-md transition duration-200 hover:bg-[#233C8C] hover:text-white">Contact</a>
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex gap-6">
+        <a href="index.html" class="text-black px-3 py-2 rounded-md transition hover:bg-[#233C8C] hover:text-white">Home</a>
+        <a href="GN_INCORPORATED.html" class="text-black px-3 py-2 rounded-md transition hover:bg-[#233C8C] hover:text-white">GN Incorporated</a>
+        <a href="GN_VENTURES.html" class="text-black px-3 py-2 rounded-md transition hover:bg-[#233C8C] hover:text-white">GN Ventures Inc.</a>
+        <a href="contact_us.html" class="text-black px-3 py-2 rounded-md transition hover:bg-[#233C8C] hover:text-white">Contact</a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="menu-btn" aria-expanded="false" aria-controls="mobile-menu" class="hamburger md:hidden flex flex-col gap-1 focus:outline-none">
+        <span class="w-6 h-0.5 bg-black"></span>
+        <span class="w-6 h-0.5 bg-black"></span>
+        <span class="w-6 h-0.5 bg-black"></span>
+      </button>
     </div>
 
-    <!-- Mobile Hamburger Button -->
-    <button id="menu-btn" class="md:hidden flex flex-col gap-1 focus:outline-none">
-      <span class="w-6 h-0.5 bg-black"></span>
-      <span class="w-6 h-0.5 bg-black"></span>
-      <span class="w-6 h-0.5 bg-black"></span>
-    </button>
-  </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden flex-col px-6 pb-4 md:hidden bg-white menu-transition">
+      <a href="index.html" class="text-black px-3 py-2 rounded-md transition hover:bg-[#233C8C] hover:text-white">Home</a>
+      <a href="GN_INCORPORATED.html" class="text-black px-3 py-2 rounded-md transition hover:bg-[#233C8C] hover:text-white">GN Incorporated</a>
+      <a href="GN_VENTURES.html" class="text-black px-3 py-2 rounded-md transition hover:bg-[#233C8C] hover:text-white">GN Ventures Inc.</a>
+      <a href="contact_us.html" class="text-black px-3 py-2 rounded-md transition hover:bg-[#233C8C] hover:text-white">Contact</a>
+    </div>
+  </nav>
 
-  <!-- Mobile Menu -->
-  <div id="mobile-menu" class="hidden flex-col px-6 pb-4 md:hidden bg-white">
-    <a href="index.html" class="text-black px-3 py-2 rounded-md transition duration-200 hover:bg-[#233C8C] hover:text-white">Home</a>
-    <a href="GN_INCORPORATED.html" class="text-black px-3 py-2 rounded-md transition duration-200 hover:bg-[#233C8C] hover:text-white">GN Incorporated</a>
-    <a href="GN_VENTURES.html" class="text-black px-3 py-2 rounded-md transition duration-200 hover:bg-[#233C8C] hover:text-white">GN Ventures Inc.</a>
-    <a href="contact_us.html" class="text-black px-3 py-2 rounded-md transition duration-200 hover:bg-[#233C8C] hover:text-white">Contact</a>
-  </div>
-</nav>
-
-<script>
-  const menuBtn = document.getElementById("menu-btn");
-  const mobileMenu = document.getElementById("mobile-menu");
-
-  menuBtn.addEventListener("click", () => {
-    mobileMenu.classList.toggle("hidden");
-  });
-</script>
+  <!-- Script -->
+  
+</body>
+</html>

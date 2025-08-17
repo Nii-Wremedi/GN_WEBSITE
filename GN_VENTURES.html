@@ -38,8 +38,27 @@
     .then(res => res.text())
     .then(data => {
       document.getElementById("nav_bar").innerHTML = data;
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener("click", () => {
+          const expanded = menuBtn.getAttribute("aria-expanded") === "true";
+
+          // Toggle menu visibility
+          mobileMenu.classList.toggle("hidden");
+          mobileMenu.classList.toggle("flex");
+
+          // Toggle hamburger animation
+          menuBtn.classList.toggle("open");
+
+          // Update ARIA attribute
+          menuBtn.setAttribute("aria-expanded", !expanded);
+        });
+      }
     });
 </script>
+
 
   <!-- Hero Section -->
   <section class="bg-gradient-to-r from-indigo-900 via-purple-900 to-yellow-600 text-white py-24">
