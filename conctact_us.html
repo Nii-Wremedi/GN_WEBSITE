@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          brand: {
+            blue: "#233C8C",
+            blueLight: "#3A5DCC",
+            gray: "#F5F6FA",
+            dark: "#1A1A1A"
+          }
+        },
+        fontFamily: {
+          heading: ["Poppins", "sans-serif"],
+          body: ["Roboto", "sans-serif"]
+        }
+      }
+    }
+  }
+</script>
+
+<div id="navbar"></div>
+
+<script>
+  fetch("navbar.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("navbar").innerHTML = data;
+    });
+</script>
+
+
+  <!-- Hero -->
+  <section class="relative text-white py-16 text-center h-[250px]">
+    <img src="./StockCake-Construction Work Sunset_1719763984.jpg" class="w-full h-full object-cover absolute inset-0">
+   
+    <div class="relative inset-0">
+        <h1 class="text-5xl font-bold pt-[30px]">Get in Touch</h1>
+        <p class="mt-4 text-lg max-w-2xl mx-auto">
+      We’d love to hear from you. Whether you have a question, project idea, or just want to connect, reach out below.
+        </p>
+    </div>
+
+  </section>
+
+  <!-- Contact Form + Info -->
+  <section class="bg-gray-100 py-16 flex flex-col md:flex-row py-8" id="contact">
+  <div class="max-w-4xl mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-6">Contact Us</h2>
+    <p class="mb-8 text-gray-600">We’d love to hear from you. Fill out the form below and we’ll get back to you soon!</p>
+
+    <form id="contactForm" method="POST" action="http://localhost:5000/api/contact" class="space-y-4 max-w-xl mx-auto">
+      <input type="text" name="name" placeholder="Full Name" required
+             class="w-full p-3 border border-gray-300 rounded-lg">
+      <input type="email" name="email" placeholder="Email Address" required
+             class="w-full p-3 border border-gray-300 rounded-lg">
+      <input type="text" name="subject" placeholder="Subject"
+             class="w-full p-3 border border-gray-300 rounded-lg">
+      <textarea name="message" rows="5" placeholder="Message" required
+                class="w-full p-3 border border-gray-300 rounded-lg"></textarea>
+      <button type="submit"
+              class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">
+        Send Message
+      </button>
+    </form>
+  </div>
+
+  <!-- Contact Info -->
+    <div class="pt-40 px-20">
+      <h2 class="text-2xl font-semibold mb-6">Contact Information</h2>
+      <p class="mb-6">You can also reach us directly through the details below.</p>
+
+      <ul class="space-y-4">
+        <li><span class="font-medium">Address:</span> Accra, Ghana</li>
+        <li><span class="font-medium">Phone:</span> +233 24 576 0355</li>
+        <li><span class="font-medium">Email:</span> info@gngroup.com</li>
+        <li><span class="font-medium">Working Hours:</span> Mon - Fri, 9am - 5pm</li>
+      </ul>
+    </section>
+      <!-- Optional Map -->
+      <div class="mt-6">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.4603763015257!2d-0.128!3d5.650!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z!5e0!3m2!1sen!2sgh!4v0000000000"
+          width="100%" 
+          height="250" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div id="footer"></div>
+
+<script>
+  fetch("footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+    });
+</script>
+
+</body>
+</html>

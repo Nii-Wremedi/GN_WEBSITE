@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          brand: {
+            blue: "#233C8C",
+            blueLight: "#3A5DCC",
+            gray: "#F5F6FA",
+            dark: "#1A1A1A"
+          }
+        },
+        fontFamily: {
+          heading: ["Poppins", "sans-serif"],
+          body: ["Roboto", "sans-serif"]
+        }
+      }
+    }
+  }
+</script>
+
+<div id="nav_bar"></div>
+
+<script>
+  fetch("navbar.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("nav_bar").innerHTML = data;
+    });
+</script>
+  <!-- Hero Section -->
+  <section class="bg-blue-900 text-white py-20">
+    <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
+      <div class="md:w-1/2">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">GN Incorporated</h1>
+        <p class="text-lg mb-6">Your trusted partner in construction equipment supply and industrial solutions.</p>
+        <a href="#services" class="bg-white text-blue-900 px-6 py-3 rounded-lg font-semibold shadow hover:bg-gray-200 transition">
+          Explore Our Services
+        </a>
+      </div>
+      <div class="md:w-1/2 mt-10 md:mt-0">
+        <img src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80" 
+             alt="Construction Equipment" class="rounded-2xl shadow-lg">
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="py-16 bg-white" id="about">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-6">About GN Incorporated</h2>
+      <p class="max-w-3xl mx-auto text-lg text-gray-600">
+        GN Incorporated specializes in the supply of high-quality construction equipment, 
+        offering end-to-end solutions to meet the needs of contractors, developers, and industrial clients.
+        We ensure reliability, safety, and innovation in every project we undertake.
+      </p>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="py-16 bg-gray-100" id="services">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Our Services</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        
+        <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+          <img src="https://img.icons8.com/fluency/96/crane.png" alt="Supply" class="mx-auto mb-4">
+          <h3 class="text-xl font-semibold mb-2">Equipment Supply</h3>
+          <p class="text-gray-600">We provide world-class construction and industrial equipment to power your projects.</p>
+        </div>
+        
+        <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+          <img src="https://img.icons8.com/fluency/96/maintenance.png" alt="Maintenance" class="mx-auto mb-4">
+          <h3 class="text-xl font-semibold mb-2">Maintenance</h3>
+          <p class="text-gray-600">Expert servicing and maintenance to keep your machines working at full capacity.</p>
+        </div>
+        
+        <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+          <img src="https://img.icons8.com/fluency/96/consultation.png" alt="Consulting" class="mx-auto mb-4">
+          <h3 class="text-xl font-semibold mb-2">Consultancy</h3>
+          <p class="text-gray-600">Tailored industrial and equipment consultancy for efficiency and growth.</p>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-blue-900 text-white py-16 text-center">
+    <h2 class="text-3xl font-bold mb-4">Partner With GN Incorporated</h2>
+    <p class="mb-6">Let’s build lasting solutions together.</p>
+    <a href="conctact_us.html" class="bg-white text-blue-900 px-6 py-3 rounded-lg font-semibold shadow hover:bg-gray-200 transition">
+      Contact Us
+    </a>
+  </section>
+
+  <div id="footer"></div>
+
+<script>
+  fetch("footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+    });
+</script>
+
+</body>
+</html>

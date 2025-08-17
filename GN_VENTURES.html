@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          brand: {
+            blue: "#233C8C",
+            blueLight: "#3A5DCC",
+            gray: "#F5F6FA",
+            dark: "#1A1A1A"
+          }
+        },
+        fontFamily: {
+          heading: ["Poppins", "sans-serif"],
+          body: ["Roboto", "sans-serif"]
+        }
+      }
+    }
+  }
+</script>
+
+<div id="nav_bar"></div>
+
+<script>
+  fetch("navbar.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("nav_bar").innerHTML = data;
+    });
+</script>
+
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-indigo-900 via-purple-900 to-yellow-600 text-white py-24">
+    <div class="container mx-auto px-6 text-center">
+      <h1 class="text-5xl font-extrabold mb-6">GN Ventures Inc.</h1>
+      <p class="text-lg max-w-2xl mx-auto mb-8">
+        Driving innovation and sustainable growth through strategic investments, 
+        technology, and forward-thinking business ventures.
+      </p>
+      <a href="#ventures" class="bg-yellow-500 text-indigo-900 px-8 py-3 rounded-lg font-semibold shadow hover:bg-yellow-400 transition">
+        Discover Our Ventures
+      </a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="py-16 bg-white" id="about">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-6">About GN Ventures Inc.</h2>
+      <p class="max-w-3xl mx-auto text-lg text-gray-600">
+        GN Ventures Inc. is committed to building innovative and impactful businesses 
+        across diverse industries. We focus on empowering entrepreneurs, scaling startups, 
+        and delivering long-term value through technology and strategy.
+      </p>
+    </div>
+  </section>
+
+  <!-- Ventures / Services Section -->
+  <section class="py-16 bg-gray-100" id="ventures">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Our Focus Areas</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+
+        <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition transform">
+          <img src="https://img.icons8.com/fluency/96/startup.png" alt="Startups" class="mx-auto mb-4">
+          <h3 class="text-xl font-semibold mb-2">Startup Investments</h3>
+          <p class="text-gray-600">We nurture startups with funding, mentorship, and global exposure.</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition transform">
+          <img src="https://img.icons8.com/fluency/96/artificial-intelligence.png" alt="Tech" class="mx-auto mb-4">
+          <h3 class="text-xl font-semibold mb-2">Technology & Innovation</h3>
+          <p class="text-gray-600">Advancing industries through digital transformation and AI-driven solutions.</p>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition transform">
+          <img src="https://img.icons8.com/fluency/96/sustainability.png" alt="Sustainability" class="mx-auto mb-4">
+          <h3 class="text-xl font-semibold mb-2">Sustainable Growth</h3>
+          <p class="text-gray-600">Investing in projects that balance profitability with environmental care.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Call To Action -->
+  <section class="bg-indigo-900 text-white py-16 text-center">
+    <h2 class="text-3xl font-bold mb-4">Join The Future With GN Ventures Inc.</h2>
+    <p class="mb-6">Together, we can shape industries and create a lasting legacy.</p>
+    <a href="conctact_us.html" class="bg-yellow-500 text-indigo-900 px-6 py-3 rounded-lg font-semibold shadow hover:bg-yellow-400 transition">
+      Get In Touch
+    </a>
+  </section>
+
+<div id="footer"></div>
+
+<script>
+  fetch("footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("footer").innerHTML = data;
+    });
+</script>
+</body>
+</html>
